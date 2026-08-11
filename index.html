@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARTÍN MUÑOZ · PORTFOLIO</title>
+<meta name="description" content="Martín Muñoz — Lic. en RRHH, founder de Laboral Forge y co-founder de UPEX Satellite. Soluciones de talento, empleabilidad y tecnología para profesionales y organizaciones.">
+<meta name="theme-color" content="#6D28D9">
+
+<!-- Favicon inline: la estrella del fondo, en el acento de la paleta -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0d'/%3E%3Cpolygon points='50,6 61,37 94,37 67,57 77,90 50,70 23,90 33,57 6,37 39,37' fill='%236D28D9'/%3E%3C/svg%3E">
+
+<!-- Tipografías del diseño original. Sin esto cae a Arial Black / Arial. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700&display=swap">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-screen="home">
+
+<!-- Background art layers -->
+<div id="bg" aria-hidden="true">
+  <div class="bg-layer" id="bg-stripes"></div>
+  <svg class="bg-star" style="left:6%;top:8%;width:26vmax;height:26vmax" viewBox="0 0 100 100">
+    <polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#000"/>
+  </svg>
+  <svg class="bg-star s2" style="right:4%;bottom:6%;width:34vmax;height:34vmax" viewBox="0 0 100 100">
+    <polygon points="50,0 60,35 98,35 68,57 78,94 50,72 22,94 32,57 2,35 40,35" fill="#fff"/>
+  </svg>
+  <!-- Arte por pantalla: assets/menus/<screen>.jpg
+       Cada uno cae a las franjas CSS si el archivo falta -->
+  <img class="menu-art" id="art-home" src="assets/menus/home.jpg" alt=""
+       onload="document.body.classList.add('has-art-home')" onerror="this.remove()">
+  <img class="menu-art" id="art-proyectos" src="assets/menus/proyectos.jpg" alt=""
+       onload="document.body.classList.add('has-art-proyectos')" onerror="this.remove()">
+  <img class="menu-art" id="art-experiencia" src="assets/menus/experiencia.jpg" alt=""
+       onload="document.body.classList.add('has-art-experiencia')" onerror="this.remove()">
+  <img class="menu-art" id="art-skills" src="assets/menus/skills.jpg" alt=""
+       onload="document.body.classList.add('has-art-skills')" onerror="this.remove()">
+  <img class="menu-art" id="art-about" src="assets/menus/about.jpg" alt=""
+       onload="document.body.classList.add('has-art-about')" onerror="this.remove()">
+  <img class="menu-art" id="art-contacto" src="assets/menus/contacto.jpg" alt=""
+       onload="document.body.classList.add('has-art-contacto')" onerror="this.remove()">
+  <div class="bg-layer" id="bg-halftone"></div>
+  <div class="bg-layer" id="bg-vignette"></div>
+</div>
+<div id="slash" aria-hidden="true"></div>
+
+<!-- Arte de héroe: dejá tu archivo en assets/hero.png (PNG transparente rinde mejor) -->
+<img id="hero-art" src="assets/hero.png" alt="" onerror="this.remove()">
+
+<!-- Transición de pantalla -->
+<div id="wipe" aria-hidden="true">
+  <div class="pane p3"></div>
+  <div class="pane p2"></div>
+  <div class="pane p1"></div>
+  <div class="flash"></div>
+</div>
+
+<!-- Cursor animado + sonido de menú -->
+<div id="cursor" aria-hidden="true"></div>
+<audio id="sfx-select" src="assets/sfx/select.mp3" preload="auto"></audio>
+
+<div id="shell">
+  <div id="hud-top">
+    <div class="hud-tag">Portfolio // Martín Muñoz</div>
+    <div class="hud-tag alt">Buenos Aires, AR · Founder @ Laboral Forge</div>
+  </div>
+
+  <div id="stage">
+
+    <!-- HOME -->
+    <section class="screen active" id="screen-home" aria-label="Menú principal">
+      <div id="intro-eyebrow">Talento · Empleabilidad · Tecnología</div>
+      <h1 id="big-name">
+        <span class="ransom" data-ransom="MARTÍN"></span>
+        <span class="ransom" data-ransom="MUÑOZ"></span>
+      </h1>
+      <p id="tagline">
+        Founder de Laboral Forge. Lic. en RRHH y Técnico Electrónico. Más de 6 años
+        dentro de distintas áreas de RRHH, con foco en Talent Acquisition IT y equipos
+        a cargo. Diseño soluciones de talento y escribo la tecnología que las sostiene.
+      </p>
+      <nav id="menu" aria-label="Secciones">
+        <button class="menu-item sel" data-target="proyectos">
+          <span class="ransom" data-ransom="PROYECTOS"></span><span class="cursor-mark">◀</span>
+        </button>
+        <button class="menu-item" data-target="experiencia">
+          <span class="ransom" data-ransom="EXPERIENCIA"></span><span class="cursor-mark">◀</span>
+        </button>
+        <button class="menu-item" data-target="skills">
+          <span class="ransom" data-ransom="SKILLS"></span><span class="cursor-mark">◀</span>
+        </button>
+        <button class="menu-item" data-target="about">
+          <span class="ransom" data-ransom="SOBRE MÍ"></span><span class="cursor-mark">◀</span>
+        </button>
+        <button class="menu-item" data-target="contacto">
+          <span class="ransom" data-ransom="CONTACTO"></span><span class="cursor-mark">◀</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="screen sub" id="screen-proyectos" aria-label="Proyectos">
+      <div class="screen-head"><span class="ransom" data-ransom="PROYECTOS"></span></div>
+      <button class="back-hint" data-back><span class="solo-teclado">ESC · </span>Volver</button>
+      <div class="grid-label"><span class="bar"></span>Destacados</div>
+      <div id="feat-grid" class="grid"></div>
+      <div class="grid-label" id="repo-label" hidden><span class="bar"></span>Repositorios públicos</div>
+      <div id="repo-status" hidden></div>
+      <div id="repo-grid" class="grid"></div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="screen sub" id="screen-experiencia" aria-label="Experiencia">
+      <div class="screen-head"><span class="ransom" data-ransom="EXPERIENCIA"></span></div>
+      <button class="back-hint" data-back><span class="solo-teclado">ESC · </span>Volver</button>
+      <div class="grid-label"><span class="bar"></span>Trayectoria</div>
+      <div id="timeline-body" class="timeline"></div>
+      <div class="grid-label"><span class="bar"></span>Formación</div>
+      <div id="formacion-body" class="timeline"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="screen sub" id="screen-skills" aria-label="Skills">
+      <div class="screen-head"><span class="ransom" data-ransom="SKILLS"></span></div>
+      <button class="back-hint" data-back><span class="solo-teclado">ESC · </span>Volver</button>
+      <div id="skills-body"></div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="screen sub align-right" id="screen-about" aria-label="Sobre mí">
+      <div class="screen-head"><span class="ransom" data-ransom="SOBRE MÍ"></span></div>
+      <button class="back-hint" data-back><span class="solo-teclado">ESC · </span>Volver</button>
+      <div class="paper">
+        <!-- Foto de perfil: dejá tu archivo en assets/me.jpg -->
+        <figure class="about-photo">
+          <img src="assets/me.jpg" alt="Martín Muñoz" onerror="this.parentElement.remove()">
+          <figcaption>Martín · Quilmes</figcaption>
+        </figure>
+        <p class="quote">Los clientes llegan con <em>una narrativa fija sobre sí mismos</em>.
+        Cruzamos datos, estrategia y evidencia para desafiarla, y la reconstruimos con criterio.
+        Sin fórmulas mágicas y sin vender humo.</p>
+        <br>
+        <p>Soy <strong>Licenciado en Recursos Humanos</strong> por la
+        <span class="stamp">UNQ</span> (promedio 9,24) y <strong>Técnico Electrónico</strong>. Esa
+        formación dual me dejó una mirada híbrida que uso en cada proceso: rigor técnico para
+        diseñar el método, sensibilidad humana para que funcione con personas reales.</p>
+        <br>
+        <p>Llevo <span class="stamp">más de 6 años</span> adentro de procesos de RRHH y pasé por
+        varias áreas. Arranqué en liquidación de sueldos en <strong>Tenaris</strong>, seguí en
+        recruiting IT en <strong>C&amp;S</strong>, y en <strong>CTL Information Technology</strong>
+        entré como analista de Talent Acquisition, terminé liderando el equipo y después pasé a
+        Onboarding y People Experience. En <strong>Selectium</strong> fui HRBP para startups,
+        software factories y consultoras IT de LATAM y Estados Unidos. Conozco los criterios reales
+        con los que las empresas contratan. Y veo desde adentro por qué tantas organizaciones
+        improvisan procesos que deberían ser estratégicos.</p>
+        <br>
+        <p>En abril de 2026 co-fundé <strong>UPEX Satellite</strong>, la división de talento QA e IT
+        de UPEX Galaxy, y en mayo lancé <strong>Laboral Forge</strong>
+        (<a href="https://laboralforge.com" target="_blank" rel="noopener">laboralforge.com</a>).
+        Trabajo con dos audiencias. Profesionales que quieren ordenar o relanzar su carrera con
+        estrategia: mis espacios son conversaciones de trabajo con mirada sistémica, hay tarea entre
+        sesiones y verdades incómodas si las necesitás escuchar. Y organizaciones que necesitan
+        soluciones a medida para su talento y sus operaciones, desde una búsqueda puntual hasta
+        procesos completos y herramientas propias. Como consultor independiente vengo acompañando
+        profesionales desde 2018: <span class="stamp">más de 100</span> hasta hoy.</p>
+        <br>
+        <p>Desde mayo de 2026 doy clases en la <strong>Universidad Nacional de Quilmes</strong>, la
+        misma casa donde me recibí. La parte técnica viene de antes: di clases particulares de
+        electrónica, telecomunicaciones, física y matemática durante siete años, y me quedó la
+        costumbre de agarrar un concepto abstracto y bajarlo hasta que se entiende. Hoy la uso para
+        escribir código: un analizador de CVs, un constructor de prompts, ocho agentes que ordenan
+        todo el conocimiento de la consultora. Soy de recursos humanos, esto es una anomalía de la
+        matriz.</p>
+        <br>
+        <p>Fuera de los procesos y los diagnósticos: soy hincha de River, el fútbol y el gaming son
+        mi cable a tierra, y tengo un gato llamado <strong>Rakan</strong> que supervisa todo desde
+        el escritorio.</p>
+      </div>
+      <a class="cv-btn" href="https://www.linkedin.com/in/mart%C3%ADnmu%C3%B1oz/"
+         target="_blank" rel="noopener">
+        <span>Ver mi perfil completo en LinkedIn ↗</span>
+      </a>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="screen sub align-right" id="screen-contacto" aria-label="Contacto">
+      <div class="screen-head"><span class="ransom" data-ransom="CONTACTO"></span></div>
+      <button class="back-hint" data-back><span class="solo-teclado">ESC · </span>Volver</button>
+      <div class="paper" style="max-width:620px">
+        <p>Si querés conversar sobre <strong>tu carrera profesional</strong> o sobre la
+        <strong>operación de talento de tu organización</strong>, escribime. También me interesan
+        las colaboraciones de producto y las alianzas. Mandame un mensaje acá abajo y me llega
+        directo, o buscame donde te quede más cómodo:</p>
+      </div>
+      <div class="contact-list">
+        <a class="contact-chip" href="mailto:martin@laboralforge.com"><span>Email ✉</span></a>
+        <a class="contact-chip" href="https://www.linkedin.com/in/mart%C3%ADnmu%C3%B1oz/" target="_blank" rel="noopener"><span>LinkedIn ↗</span></a>
+        <a class="contact-chip" href="https://github.com/martinmunozhr" target="_blank" rel="noopener"><span>GitHub ↗</span></a>
+        <a class="contact-chip" href="https://wa.me/5491123991624" target="_blank" rel="noopener"><span>WhatsApp ↗</span></a>
+        <a class="contact-chip" href="https://laboralforge.com" target="_blank" rel="noopener"><span>Laboral Forge ↗</span></a>
+      </div>
+
+      <!-- Formulario relayado a tu inbox vía formsubmit.co.
+           OJO: el primer envío te manda un link de activación de única vez. -->
+      <form id="contact-form" class="paper" style="max-width:620px" novalidate>
+        <div class="form-head">Mandame un mensaje</div>
+        <label class="field">
+          <span>Nombre</span>
+          <input type="text" name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label class="field">
+          <span>Tu email</span>
+          <input type="email" name="email" required maxlength="150" autocomplete="email">
+        </label>
+        <label class="field">
+          <span>Mensaje</span>
+          <textarea name="message" required rows="5" maxlength="3000"></textarea>
+        </label>
+        <!-- honeypot: lo llenan los bots, los humanos nunca lo ven -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-5000px" aria-hidden="true">
+        <div class="form-foot">
+          <button type="submit" class="cv-btn form-send"><span>Enviar ➤</span></button>
+          <div id="form-status" role="status"></div>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <div id="hud-bottom">
+    <span class="solo-teclado"><span class="key">↑↓</span>Elegir</span>
+    <span class="solo-teclado"><span class="key">Enter</span>Confirmar</span>
+    <span class="solo-teclado"><span class="key">Esc</span>Volver</span>
+    <span style="margin-left:auto;opacity:.8" id="clock"></span>
+  </div>
+</div>
+
+<!-- MVC: model = datos, view = DOM, controller = eventos -->
+<script src="js/model.js" defer></script>
+<script src="js/view.js" defer></script>
+<script src="js/controller.js" defer></script>
+</body>
+</html>
